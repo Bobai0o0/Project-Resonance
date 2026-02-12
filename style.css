@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #1a0b12; /* romantic night */
-    --accent-color: #ff5c8d; /* love pink */
+    --bg-color: #1a0b12;
+    --accent-color: #ff5c8d;
     --text-main: #ffffff;
-    --text-dim: #f0c2d3; /* softer pink text */
+    --text-dim: #f0c2d3;
     --glass: rgba(255, 255, 255, 0.05);
 }
 
@@ -20,14 +20,11 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Glow Effect */
+/* Background Glow */
 .glow-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, #ff5c8d 0%, #1a0b12 70%);
+    inset: 0;
+    background: radial-gradient(circle at center, #ff5c8d 0%, #1a0b12 70%);
     z-index: -1;
     opacity: 0.6;
 }
@@ -67,7 +64,7 @@ nav {
     color: var(--accent-color);
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
     height: 100vh;
     display: flex;
@@ -96,8 +93,8 @@ h1 {
 
 .gradient-text {
     background: linear-gradient(90deg, #ff5c8d, #ff81a5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero-content p {
@@ -106,6 +103,7 @@ h1 {
     margin: 2rem 0;
 }
 
+/* Buttons */
 .btn-primary {
     background: var(--text-main);
     color: black;
@@ -134,54 +132,105 @@ h1 {
     box-shadow: 0 0 15px #ff5c8d40;
 }
 
-/* Visual Mockup - HeartLink Sensor */
+/* Hero Visual */
 .hero-visual {
     flex: 1;
     display: flex;
     justify-content: center;
-    position: relative;
+    align-items: center;
 }
+
+/* ===== PERFECT CSS HEART ===== */
 
 .sensor-mock {
-    width: 150px;
-    height: 150px;
-    background: #2b0d1e;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.1);
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 50px rgba(255,92,141,0.3);
-}
-
-.core-node {
-    width: 20px;
-    height: 20px;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
     background: var(--accent-color);
-    border-radius: 50%;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
     box-shadow: 0 0 25px var(--accent-color);
 }
 
+/* Top left circle */
+.sensor-mock::before,
+.sensor-mock::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.sensor-mock::before {
+    top: -50px;
+    left: 0;
+}
+
+.sensor-mock::after {
+    left: 50px;
+    top: 0;
+}
+
+/* Heart Beat */
+@keyframes beat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    25% { transform: rotate(-45deg) scale(1.15); }
+    50% { transform: rotate(-45deg) scale(1.1); }
+    75% { transform: rotate(-45deg) scale(1.15); }
+}
+
+/* Wrapper to hold heart + ripples */
+.heart-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(50px);
+}
+
+/* Pulse Rings */
 .pulse-ring {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: -15%;             
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 175px;
+    height: 175px;
     border: 2px solid var(--accent-color);
     border-radius: 50%;
-    animation: pulse 3s infinite linear;
     opacity: 0;
+    animation: pulse 3s infinite ease-out;
+    z-index: 0;         
 }
 
-.delay-1 { animation-delay: 1.5s; }
+.delay-1 {
+    animation-delay: 1s;
+}
+
+.delay-2 {
+    animation-delay: 2s;
+}
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.5); opacity: 0.6; }
-    100% { transform: scale(2); opacity: 0; }
+    0% {
+        transform: scale(1.2);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.8);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
 }
 
-/* Features Section */
+/* Features */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
