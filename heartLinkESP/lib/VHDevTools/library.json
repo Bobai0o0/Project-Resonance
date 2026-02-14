@@ -1,0 +1,18 @@
+{
+    "description":  "This library is the part of Titan Haptics",
+    "version":  "2.1.0",
+    "platforms":  "espressif32",
+    "frameworks":  "arduino",
+    "name":  "VHDevTools",
+    "keywords":  "Titan,Function Generator,Sine Wave,Square Wave,Vibrator",
+    "srcDir":  "src/esp32",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "https://github.com/TitanHaptics/VectorHapticsLibrary.git"
+                   },
+    "license":  "Proprietary",
+    "build":  {
+                  "precompiled":  true,
+                  "libArchive":  true
+              }
+}

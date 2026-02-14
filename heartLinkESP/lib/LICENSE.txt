@@ -1,0 +1,60 @@
+VECTORHAPTICS FIRMWARE LIBRARIES LICENSE
+
+Copyright (c) 2026 Titan Haptics. All rights reserved.
+
+HACKATHON AND EVALUATION USE LICENSE
+
+This license applies to all VectorHaptics-related firmware libraries and 
+components, including but not limited to:
+- Vectorhaptics
+- VHAudioStreaming
+- VHBoardProfiles
+- VHDevTools
+- VHEffectReceiver
+- All related documentation and examples
+
+Collectively referred to as the "Software".
+
+1. PERMITTED USES:
+   - Use the Software for hackathons, competitions, and educational events
+   - Use the Software for personal learning and evaluation purposes
+   - Create prototypes and demonstrations using the Software
+   - Modify the Software for your own hackathon projects
+
+2. RESTRICTIONS:
+   - You may NOT distribute, sublicense, or share the Software or any portion 
+     of it with third parties
+   - You may NOT sell, rent, lease, or commercialize any product, application, 
+     or service that incorporates the Software
+   - You may NOT use the Software in any production or commercial environment
+   - You may NOT remove or alter any copyright, trademark, or attribution 
+     notices in the Software
+   - Any modifications you make remain subject to these same restrictions
+
+3. OWNERSHIP:
+   The Software and all intellectual property rights therein remain the 
+   exclusive property of Titan Haptics. This license does not grant you any 
+   rights to patents, trademarks, or trade secrets.
+
+4. NO WARRANTY:
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL 
+   TITAN HAPTICS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING 
+   FROM THE USE OF THE SOFTWARE.
+
+5. TERMINATION:
+   This license is effective until terminated. Your rights under this license 
+   will terminate automatically if you fail to comply with any of its terms. 
+   Upon termination, you must destroy all copies of the Software in your 
+   possession.
+
+6. COMMERCIAL LICENSING:
+   If you wish to use the Software for commercial purposes or distribution, 
+   please contact Titan Haptics to discuss a commercial license agreement.
+
+For questions or commercial licensing inquiries, please contact:
+info@titanhaptics.com
+
+By using the Software, you acknowledge that you have read this license, 
+understand it, and agree to be bound by its terms and conditions.
