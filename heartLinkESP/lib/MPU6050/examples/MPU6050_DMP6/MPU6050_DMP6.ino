@@ -47,8 +47,6 @@ THE SOFTWARE.
 // I2Cdev and MPU6050 must be installed as libraries, or else the .cpp/.h files
 // for both classes must be in the include path of your project
 #include "I2Cdev.h"
-#include <Arduino.h>
-#include <Wire.h>
 
 #include "MPU6050_6Axis_MotionApps20.h"
 //#include "MPU6050.h" // not necessary if using MotionApps include file
@@ -135,13 +133,6 @@ uint16_t packetSize;    // expected DMP packet size (default is 42 bytes)
 uint16_t fifoCount;     // count of all bytes currently in FIFO
 uint8_t fifoBuffer[64]; // FIFO storage buffer
 
-#define sdaPIN 21
-#define sclPIN 22
-#define heartPin 2
-#define accelAddress 0x68
-
-int heartVal = 0;
-
 // orientation/motion vars
 Quaternion q;           // [w, x, y, z]         quaternion container
 VectorInt16 aa;         // [x, y, z]            accel sensor measurements
@@ -172,9 +163,6 @@ void dmpDataReady() {
 // ================================================================
 
 void setup() {
-    Serial.begin(115200);
-    Wire.begin(sdaPIN, sclPIN);
-    pinMode(heartPin, INPUT);
     // join I2C bus (I2Cdev library doesn't do this automatically)
     #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
         Wire.begin();
@@ -264,9 +252,6 @@ void setup() {
 // ================================================================
 
 void loop() {
-    heartVal = analogRead(heartPin);
-    Serial.println(heartVal);
-    delay(250);
     // if programming failed, don't try to do anything
     if (!dmpReady) return;
     // read a packet from FIFO
@@ -307,7 +292,6 @@ void loop() {
             Serial.print(ypr[1] * 180/M_PI);
             Serial.print("\t");
             Serial.println(ypr[2] * 180/M_PI);
-            delay(1000);
         #endif
 
         #ifdef OUTPUT_READABLE_REALACCEL
